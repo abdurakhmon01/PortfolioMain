@@ -1,133 +1,222 @@
 * {
   margin: 0;
   padding: 0;
-  background: #2400f3;
-  color: white;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+ul {
+  list-style: none;
 }
 
-.wrapper {
-  max-width: 1280px;
-  overflow: hidden;
-  margin: 0 auto;
-  padding: 0 30px;
-  height: 100%;
+a,
+a:hover {
+  text-decoration: none;
 }
 
-.relation {
-  position: relative;
+input,
+select,
+button {
+  outline: none;
 }
 
-.relation .offset {
-  padding-top: 56.25%;
-  height: 0;
+body {
+  font-family: 'Lato';
+  font-weight: 300;
+  background: #003471;
 }
 
-.relation .content {
-  position: absolute;
+.header {
+  padding-bottom: 30px;
+  background: url("../img/portfolio_bg_01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.header-nav {
+  padding: 30px 0;
+  background: #fff;
+}
+
+.header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header-logo {
+  font-family: 'Lato';
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffaa00;
+  font-size: 41px;
+}
+
+.header-logo span {
+  color: #003471;
+}
+
+.header-logo :nth-child(2) {
+  color: #626262;
+  font-family: 'Lato';
+  font-weight: 300;
+  text-transform: lowercase;
+  font-size: 20px;
+}
+
+.header-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 434px;
   width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
+  text-transform: uppercase;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 14px;
+  position: relative;
+  /*         &__link_active::after{
+            display: none;
+                content: '';
+                width: 1; 
+                height: 1;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 10px solid #ffffff;
+                position: absolute;
+                z-index: 5;
+                top: 64px;
+                left: 15px;
+        } */
+}
+
+.header-menu__item {
+  border-right: 2px solid #ebebeb;
+  padding-right: 20px;
+}
+
+.header-menu :nth-child(5) {
+  border: none;
+}
+
+.header-menu__link {
+  color: #003471;
+}
+
+.header-menu__link_active {
+  color: #ffaa00;
+}
+
+.header-subtitle {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 307px 0 23px;
+  color: #fff;
+  font-family: 'Lato';
+  font-weight: 100;
+  font-size: 30px;
+}
+
+.header-title {
+  font-family: 'Lato';
+  font-weight: 100;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 50px;
+}
+
+.header-title span {
+  font-family: 'Lato';
+  font-weight: 400;
+}
+
+.header-text {
+  color: #fff;
+  font-family: 'Lato';
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-top: 26px;
+}
+
+.header-button {
+  text-align: center;
+  color: #fff;
+  padding: 12px 20px;
+  background: #ffaa00;
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: 'Lato';
+  font-weight: 400;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.header-button:hover {
+  background: #fff;
+  color: #ffaa00;
+  border: 1px solid #ffaa00;
+}
+
+.header-social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  margin-top: 48px;
 }
 
-.relation .content .big {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 100%;
-  flex: 1 1 100%;
-  width: 40%;
+.header-social__icons {
+  margin-top: 155px;
 }
 
-.relation .content .product {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 100%;
-  flex: 1 1 100%;
-  width: 30%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+.header-social__icons_item .fa {
+  background: #a8bacf32;
+  color: #fff;
+  border-radius: 50%;
+  border: 9px solid #a8bacf;
+  margin-right: 10px;
+  height: 61px;
+  width: 61px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 40px;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
 }
 
-.relation .content .product.product-1 {
-  -webkit-box-ordinal-group: 0;
-  -ms-flex-order: -1;
-  order: -1;
-}
-
-.relation .content .product .item {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 50%;
-  flex: 1 1 50%;
-}
-
-.relation .content .product .item.item-1 {
-  background: #fc0;
-  border: 1px solid #000;
-}
-
-.relation .content .product .item.item-2 {
-  background: #090030;
-  border: 1px solid #000;
-}
-
-.relation .content .big {
-  background: #17750f;
-}
-
-@media (max-width: 780px) {
-  .relation .offset {
-    padding-top: 100%;
-    height: 0;
-  }
-
-  .relation .content .big {
-    width: 70%;
-  }
-
-  .relation .content .product {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 50%;
-    flex: 1 1 50%;
-  }
-
-  .relation .content .product.product-1 {
-    -webkit-box-ordinal-group: 1;
-    -ms-flex-order: 0;
-    order: 0;
-  }
-}
-
-@media (max-width: 560px) {
-  .relation .offset {
-    display: none;
-  }
-
-  .relation .content {
-    position: static;
-  }
-
-  .relation .content .big {
-    width: auto;
-  }
-
-  .relation .content .product {
-    width: auto;
-  }
+.header-social__icons_item .fa:hover {
+  background: #4f8bcf;
 }

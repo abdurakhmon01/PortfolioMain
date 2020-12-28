@@ -7,7 +7,7 @@ var watch = require('gulp-watch');
 var browserSync = require('browser-sync').create();
 var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
-const imagemin = require('gulp-imagemin');
+var imagemin = require('gulp-imagemin');
 var sass = require('gulp-sass');
 
 function style(){
@@ -34,7 +34,9 @@ function style(){
 gulp.task('watch', function(){
     watch('./app/precss/style.scss', style)
     watch('./app/index.html', browserSync.reload)
+    watch('./app/js/script.js', browserSync.reload)
 })
+
 
 gulp.task('server', function() {
     browserSync.init({

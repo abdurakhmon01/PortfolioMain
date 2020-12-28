@@ -1,106 +1,168 @@
+@import 'var';
+@import 'mixin';
+
 *{
     margin: 0;
     padding: 0;
-    background: rgb(36, 0, 243);
-    color: white;
-   
-}
-img{
-    max-width: 100%;
-    display: block;
-}
-.wrapper{
-    max-width: 1280px;
-    overflow: hidden;
-    margin: 0 auto;
-    padding: 0 30px;
-    height: 100%;
-}
-.relation{
-    position: relative;
-}
-.relation .offset{
-    padding-top: 56.25%;
-    height: 0;
-}
-@media(max-width: 780px){
-    .relation .offset{
-        padding-top: 100%;
-        height: 0;
-    }
-}
-@media(max-width: 560px){
-    .relation .offset{
-        display: none;
-    }
-}
-.relation .content{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-@media(max-width: 560px){
-    .relation .content{
-        position: static;
-    }
+    box-sizing: border-box;
 }
 
-.relation .content .big{
-    flex:1 1 100%;
-    width: 40%;
-}
-@media(max-width: 780px){
-    .relation .content .big{
-        width: 70%;
-    }
-}
-@media(max-width: 560px){
-    .relation .content .big{
-        width: auto;
-    }
+ul{
+    list-style: none;
 }
 
-.relation .content .product{
-    flex: 1 1 100%;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-}
-@media(max-width: 780px){
-    .relation .content .product{
-        flex: 1 1 50%;
-    }
-}
-@media(max-width: 560px){
-     .relation .content .product{
-        width: auto;
-    }
+a,
+a:hover{
+    text-decoration: none;
 }
 
-.relation .content .product.product-1{
-    order: -1;
+input,
+select,
+button{
+    outline: none;
 }
-@media(max-width: 780px){
-    .relation .content .product.product-1{
-        order: 0;
+
+body{
+    font-family: 'Lato';
+    font-weight: 300;
+    background: $blue;
+}
+
+.header{
+    padding-bottom: 30px;
+    @include bg('../img/portfolio_bg_01.jpg');
+    &-nav{
+        padding: 30px 0;
+        background: $white;
     }
+    .container{
+        @include flex(space-between)
+    }
+    &-logo{
+        @include lato(900);
+        text-transform: uppercase;
+        color: $orange;
+        font-size: 41px;
+        span{
+            color: $blue;
+        }
+        :nth-child(2){
+            color: #626262;
+            @include lato(300);
+            text-transform: lowercase;
+            font-size: 20px;
+        }
+    }
+    &-menu{
+        @include flex(space-between);
+        max-width: 434px;
+        width: 100%;
+        text-transform: uppercase;
+        @include open;
+        font-size: 14px;
+        position: relative;
+        &__item{
+            border-right: 2px solid #ebebeb;
+            padding-right: 20px;
+        }
+        :nth-child(5){
+            border: none;
+        }
+        &__link{
+            color: $blue;
+            &_active{
+                color: $orange;
+    
+            }
+        }
+
+/*         &__link_active::after{
+            display: none;
+                content: '';
+                width: 1; 
+                height: 1;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 10px solid #ffffff;
+                position: absolute;
+                z-index: 5;
+                top: 64px;
+                left: 15px;
+        } */
+    }
+    &-subtitle{
+        text-transform: uppercase;
+        text-align: center;
+        margin: 307px 0 23px;
+        color: $white;
+        @include lato(100);
+        font-size: 30px;
+    }
+    &-title{
+        @include lato(100);
+        text-align: center;
+        text-transform: uppercase;
+        color: $white;
+        font-size: 50px;
+        span{
+            @include lato(400)
+        }
+    }
+    &-text{
+        color: $white;
+        @include lato(700);
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 20px;
+        margin-top: 26px;
+    }
+    &-button{
+        text-align: center;
+        color: $white;
+        padding: 12px 20px;
+        background: $orange;
+        border-radius: 3px;
+        font-size: 16px;
+        @include lato(400);
+        text-transform: uppercase;
+        transition: 0.5s;
+    }
+    &-button:hover{
+        background: $white;
+        color: $orange;
+        border: 1px solid $orange;
+    }
+    &-social{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 48px;
+        &__icons{
+            margin-top: 155px;
+            &_item{
+                .fa{
+                    background: #a8bacf32;
+                    color: #fff;
+                    border-radius: 50%;
+                    border: 9px solid #a8bacf ;
+                    margin-right: 10px;
+                    height: 61px;
+                    width: 61px;
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                    font-size: 40px;
+                    transition: 0.5s;
+                }
+                .fa:hover{
+                    background: #4f8bcf;                   
+                }
+            }
+        }
+    }
+
+
+
 }
-.relation .content .product .item{
-    flex: 1 1 50%;
-}
-.relation .content .product .item.item-1{
-    background: #fc0;
-    border: 1px solid #000;
-}
-.relation .content .product .item.item-2{
-    background: rgb(9, 0, 48);
-    border: 1px solid #000;
-}
-.relation .content .big{
-    background: rgb(23, 117, 15);
-}
+
